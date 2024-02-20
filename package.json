@@ -18,7 +18,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "fix": "eslint --fix \"src/**/*.js\"",
-    "prettier": "npx prettier --write \"src/**/*.js\""
+    "prettier": "npx prettier --write \"src/**/*.js\"",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "eslintConfig": {
     "extends": [
