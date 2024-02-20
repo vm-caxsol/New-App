@@ -18,15 +18,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: ESLint
+      - name: ESLint & Prettier
         run: |
           npm install eslint --save-dev
           npm run lint
           npx eslint --max-warnings=40 "src/**/*.js" "."
+          npm run prettier
         
-      - name: Prettier
-        run: npm run prettier
-
       - name: Build
         run: npm run build
 
