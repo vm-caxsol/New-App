@@ -37,5 +37,10 @@ jobs:
           
       - name: Cypress Testing (e2e)
         run: |
-          npm install cypress -D
-          npx cypress open
+          if [ -z "$(ls cypress/integration/*.spec.js)" ]; then
+            echo "No Cypress test files found. Skipping Cypress tests.";
+          else
+            npm install cypress -D
+            npx cypress open
+          fi
+          
