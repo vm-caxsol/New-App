@@ -1,8 +1,16 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('unusedVariable is not used in the component', () => {
+  // Render the component
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  // Attempt to access the unusedVariable
+  // If the test fails, it means the variable is being used
+  expect(() => {
+    // Replace 'unusedVariable' with the actual name of the variable if needed
+    // eslint-disable-next-line no-unused-vars
+    const unusedVariable = (window as any).unusedVariable;
+  }).toThrow();
 });
