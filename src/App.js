@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   // Add an unused variable
-  const unusedVariable = 'This is unused';
+  // const unusedVariable = 'This is unused';
 
   return (
     <div className="App">
