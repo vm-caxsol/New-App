@@ -37,5 +37,5 @@ jobs:
           
       - name: Cypress Testing (e2e)
         run: |
-          npm install --save-dev cypress
-          npm run cypress:open
+          npm install cypress -D
+          npx cypress open
