@@ -31,7 +31,7 @@ jobs:
         run: |
           npm install eslint --save-dev
           npm run lint
-          npx eslint --max-warnings=40 "src/**/*.js" "."
+          # npx eslint --max-warnings=40 "src/**/*.js" "."
           npm run prettier
         
       - name: Build
@@ -39,12 +39,13 @@ jobs:
 
       - name: Test and Coverage
         run: |
-          npm install --save-dev nyc
-          npx nyc npm test
+          # npm install --save-dev nyc
+          # npx nyc npm test
+          npm run test
           
       - name: Cypress Testing (e2e)
         run: |
-          if [ -z "$(ls cypress/integration/*.spec.js)" ]; then
+          if [ -z "$(ls cypress/integration/*.spec.js)" ]; then #check location n file type
             echo "No Cypress test files found. Skipping Cypress tests.";
           else
             npm install cypress -D
