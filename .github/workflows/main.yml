@@ -42,9 +42,16 @@ jobs:
             npx cypress open
           fi
 
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+
       - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@master
-        env:
-          SONAR_TOKEN: "sqp_187666d3b257af45458411b3a6625c9f570f0622"
-          SONAR_HOST_URL: "http://52.28.63.193:9000/"
-          SONAR_PROJECT_KEY: "demo-project"
+        run: |
+          ./gradlew sonarqube \
+            -Dsonar.projectKey=demo-project \
+            -Dsonar.organization=demo-project \
+            -Dsonar.host.url=http://52.28.63.193:9000 \
+            -Dsonar.login=sqp_187666d3b257af45458411b3a6625c9f570f0622
