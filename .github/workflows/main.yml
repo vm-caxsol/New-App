@@ -41,4 +41,9 @@ jobs:
             npm install cypress -D
             npx cypress open
           fi
-          
+
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: "sqp_187666d3b257af45458411b3a6625c9f570f0622"
+          SONAR_HOST_URL: "http://52.28.63.193:9000/"
