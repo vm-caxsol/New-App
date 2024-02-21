@@ -47,3 +47,4 @@ jobs:
         env:
           SONAR_TOKEN: "sqp_187666d3b257af45458411b3a6625c9f570f0622"
           SONAR_HOST_URL: "http://52.28.63.193:9000/"
+          SONAR_PROJECT_KEY: "demo-project"
